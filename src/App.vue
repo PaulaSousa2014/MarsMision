@@ -1,26 +1,46 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="main">
+ <NavbarComponent />
+  <h1>Welcome to Mars Rover Mision!</h1>
+  <p>You’re part of the team that explores Mars by sending remotely controlled vehicles to the surface
+of the planet. Yo developed a a software that translates the commands sent from earth to instructions
+that are understood by the rover.</p>
+<p>Let's see if it works!</p>
+  
+
+  
+  <GameMision />
+  <MarsPlanet />
+ 
+
+  <router-view />
+</div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
+<script setup>
+import NavbarComponent from "./components/NavbarComponent.vue"
+import GameMision from "./components/GameMision.vue"
+import MarsPlanet from "./components/MarsPlanet.vue"
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+
+
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.main{
+  background-color:rgb(16, 16, 64);
+  color: #215c3fe4;
+  font-weight: bold;
+  
 }
+.main h1{
+  color: #215c3fe4;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-shadow: 0.5px 0.5px rgb(169, 162, 162);
+  font-family: monospace;
+}
+
+
 </style>
