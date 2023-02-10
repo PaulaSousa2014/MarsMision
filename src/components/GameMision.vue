@@ -29,11 +29,13 @@
   </template>
   
   <script>
+  
+
   export default {
     data() {
       return {
-        x: 0,
-        y: 0,
+        x: Math.ceil(Math.random() * 199)+1,
+        y: Math.ceil(Math.random() * 199)+1,
         direction: 'N',
         commands: '',
         message: '',
@@ -41,6 +43,7 @@
       };
     },
     methods: {
+        
       runCommands() {
         this.message = '';
         let xInitial = this.x;
@@ -48,7 +51,7 @@
         let x = xInitial;
         let y = yInitial;
         let direction = this.direction;
-        let obstacle = ``;
+        let obstacle=``;
         
         let commands = this.commands.split('');
         let facing = {
@@ -57,118 +60,62 @@
           E: { x: 1, y: 0 },
           W: { x: -1, y: 0 }
         };
-        for (let i = 0; i < commands.length; i++) {
-          let command = commands[i];
-          if (command === 'f'|| command ==='F') {
-            
-            if( x<200 && x>0){
-                x += facing[direction].x
-            }else{ obstacle= `The roover has crashed and can not move foward! `}
-            
-            if(y<200 && y>0){
-                y += facing[direction].y
-            }else{ this.message=`The roover has crashed and can not move foward!`}
-            
-            
-          } else if (command === 'r' || command ==='R') {
-            switch (direction) {
-              case 'N':
-                direction = 'E';
-                if( x<200 && x>0){
-                x += facing[direction].x
-            }else{ obstacle= `The roover has crashed and can not move foward! `}
-            
-            if(y<200 && y>0){
-                y += facing[direction].y
-            }else{ this.message=`The roover has crashed and can not move foward!`}
-                break;
-              case 'E':
-                direction = 'S';
-                if( x<200 && x>0){
-                x += facing[direction].x
-            }else{ obstacle= `The roover has crashed and can not move foward! `}
-            
-            if(y<200 && y>0){
-                y += facing[direction].y
-            }else{ this.message=`The roover has crashed and can not move foward!`}
-                break;
-              case 'S':
-                direction = 'W';
-                if( x<200 && x>0){
-                x += facing[direction].x
-            }else{ obstacle= `The roover has crashed and can not move foward! `}
-            
-            if(y<200 && y>0){
-                y += facing[direction].y
-            }else{ this.message=`The roover has crashed and can not move foward!`}
-                break;
-              case 'W':
-                direction = 'N';
-                if( x<200 && x>0){
-                x += facing[direction].x
-            }else{ obstacle= `The roover has crashed and can not move foward! `}
-            
-            if(y<200 && y>0){
-                y += facing[direction].y
-            }else{ this.message=`The roover has crashed and can not move foward!`}
-                break;
-            }
-          } else if (command === 'l' || command === 'L') {
-            switch (direction) {
-              case 'N':
-                direction = 'W';
-                if( x<200 && x>0){
-                x += facing[direction].x
-            }else{ obstacle= `The roover has crashed and can not move foward! `}
-            
-            if(y<200 && y>0){
-                y += facing[direction].y
-            }else{ this.message=`The roover has crashed and can not move foward!`}
-                break;
-              case 'W':
-                direction = 'S';
-                if( x<200 && x>0){
-                x += facing[direction].x
-            }else{ obstacle= `The roover has crashed and can not move foward! `}
-            
-            if(y<200 && y>0){
-                y += facing[direction].y
-            }else{ this.message=`The roover has crashed and can not move foward!`}
-                break;
-              case 'S':
-                direction = 'E';
-                if( x<200 && x>0){
-                x += facing[direction].x
-            }else{ obstacle= `The roover has crashed and can not move foward! `}
-            
-            if(y<200 && y>0){
-                y += facing[direction].y
-            }else{ this.message=`The roover has crashed and can not move foward!`}
-                break;
-              case 'E':
-                direction = 'N';
-                if( x<200 && x>0){
-                x += facing[direction].x
-            }else{ obstacle= `The roover has crashed and can not move foward! `}
-            
-            if(y<200 && y>0){
-                y += facing[direction].y
-            }else{ this.message=`The roover has crashed and can not move foward!`}
-                break;
-            }
-          }
+        if (x <= 0 || x >= 200 || y <= 0 || y >= 200) {
+    obstacle = `Rover has crashed and can not move foward!`;
+  } else {
+    for (let i = 0; i < commands.length; i++) {
+      let command = commands[i];
+      if (command === 'f'|| command ==='F') {
+        x += facing[direction].x;
+        y += facing[direction].y;
+        if (x <= 0 || x >= 200 || y <= 0 || y >= 200) {
+          obstacle = `Rover has crashed and can not move foward!`;
+          break;
         }
-       
-        this.message = `${obstacle} Rover starting point was at (${xInitial}, ${yInitial}) and after commands is at (${x}, ${y})`;
-         
-    },
-    
-      
+      } else if (command === 'r' || command ==='R') {
+        switch (direction) {
+          case 'N':
+            direction = 'E';
+            break;
+          case 'E':
+            direction = 'S';
+            break;
+          case 'S':
+            direction = 'W';
+            break;
+          case 'W':
+            direction = 'N';
+            break;
+        }
+      } else if (command === 'l' || command === 'L') {
+        switch (direction) {
+          case 'N':
+            direction = 'W';
+            break;
+          case 'W':
+            direction = 'S';
+            break;
+          case 'S':
+            direction = 'E';
+            break;
+          case 'E':
+            direction = 'N';
+            break;
+        }
+      }
     }
+  }
+ 
+  
+  this.message = `${obstacle}  Rover starting point was at (${xInitial}, ${yInitial}) facing ${direction} and after commands is at (${x}, ${y})`;
 }
 
+    
       
-</script>
+  },
+}
+
+    </script>
 <style>
 .game{
     color: #215c3fe4;
