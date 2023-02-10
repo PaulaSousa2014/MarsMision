@@ -22,7 +22,7 @@ href="https://github.com/PaulaSousa2014"><i class="fa-brands fa-github"></i></a>
   
 </script>
 
-<style>
+<style scoped>
  .footer{   
         justify-content: center;
         background-color: rgb(158, 156, 156);

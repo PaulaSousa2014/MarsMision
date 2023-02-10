@@ -105,7 +105,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .game {
   color: #215c3fe4;
   font-weight: bold;

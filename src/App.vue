@@ -2,7 +2,7 @@
   <div class="main">
  <NavbarComponent />
   <h1>Welcome to Mars Rover Mision!</h1>
-  <p>You’re part of the team that explores Mars by sending remotely controlled vehicles to the surface
+  <p>You’re part of the team that explores Mars by sending remotely controlled vehicles (rover) to the surface
 of the planet. Yo developed a a software that translates the commands sent from earth to instructions
 that are understood by the rover.</p>
 <h1>Commands allowded:</h1>
@@ -21,6 +21,10 @@ that are understood by the rover.</p>
 
   
   <GameMision />
+
+  <!-- Como ponia las imagenes? -->
+  <h1>This is your map</h1>
+  <font-awesome-icon icon="fa-light fa-map-location-dot" />
   <MarsPlanet />
  
 
@@ -39,12 +43,14 @@ import MarsPlanet from "./components/MarsPlanet.vue"
 </script>
 
 <style>
+/* No puedo sacar de aqui y poner en el style.css. Porque? */
 .main{
   background-color:rgb(16, 16, 64);
   color: #215c3fe4;
   font-weight: bold;
   font-size: 1rem;
   font-family: monospace;
+  padding: 10px;
   
 }
 .main h1{
