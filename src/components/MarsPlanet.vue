@@ -10,7 +10,9 @@
     </div>
   </div>
 </template>
-<script></script>
+<script>
+
+</script>
 <style scoped>
 .planet {
   height: 200px;

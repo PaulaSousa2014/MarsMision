@@ -1,4 +1,5 @@
 <template>
+  
   <div class="main">
  <NavbarComponent />
   <h1>Welcome to Mars Rover Mision!</h1>
@@ -25,7 +26,7 @@ that are understood by the rover.</p>
   <!-- Como ponia las imagenes? -->
   <h1>This is your map</h1>
   <font-awesome-icon icon="fa-light fa-map-location-dot" />
-  <MarsPlanet />
+  
  
 
   <router-view />
@@ -35,7 +36,7 @@ that are understood by the rover.</p>
 <script setup>
 import NavbarComponent from "./components/NavbarComponent.vue"
 import GameMision from "./components/GameMision.vue"
-import MarsPlanet from "./components/MarsPlanet.vue"
+
 
 
 
@@ -45,7 +46,7 @@ import MarsPlanet from "./components/MarsPlanet.vue"
 <style>
 /* No puedo sacar de aqui y poner en el style.css. Porque? */
 .main{
-  background-color:rgb(16, 16, 64);
+  /* background-color:rgb(16, 16, 64); */
   color: #215c3fe4;
   font-weight: bold;
   font-size: 1rem;
