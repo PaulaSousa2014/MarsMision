@@ -66,14 +66,7 @@ export default {
       this.context.restore();
     },
 
-    //Metodo para establecer los obstaculos de limites del planeta 0 y 200
-    detectObstacle(x, y) {
-        if (x <= 0 || x >= 200 || y <= 0 || y >= 200) {
-            return true;
-        }
-        return false;
-      },
-    
+       
       //Metodo para girar el rover  hacia la derecha
     turnRight(direction){
       switch (direction) {
@@ -138,7 +131,7 @@ export default {
       
       // this.drawRover(); esto para que salga el punto inicial tambien
       //Antes de empezar, detectamos si estamos chocando con algun obstaculo(en nuestro caso solo la delimitación del planeta)
-      if (this.detectObstacle(this.x, this.y)===true) {
+      if (x <= 0 || x >= 200 || y <= 0 || y >= 200) {
         obstacle = `Rover is out of bounds! Change the initial coordinates for continue. `;
         this.drawRover();
       } else {
@@ -152,7 +145,7 @@ export default {
             y += facing[direction].y;
 
             //Si encontra con un obstaculo avisamos y deja de desplazarse
-            if (this.detectObstacle(this.x, this.y)===true) {
+            if (x <= 0 || x >= 200 || y <= 0 || y >= 200) {
               obstacle = `Rover has crashed and can not move foward!`;
               break;
             }
