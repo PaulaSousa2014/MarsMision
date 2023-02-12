@@ -20,60 +20,18 @@
 
 </script>
 <style scoped>
-.home {
-  color: #215c3fe4;
-  font-weight: bold;
-  font-size: 1.1rem;
-  text-shadow: 0.5px 0.5px rgb(169, 162, 162);
-  font-family: monospace;
-}
-.navbar-start {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-.navbar-start1 {
-  font-family: monospace;
-  display: flex;
-  flex-direction: row;
-  padding-top: 7px;
-}
-.checked {
-  color: #215c3fe4;
-  font-size: 1.3rem;
-  text-shadow: 1px 1px rgb(169, 162, 162);
-  font-family: monospace;
-  padding-top: 4px;
-  font-weight: bold;
-}
-.navbar-brand {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 3px;
-  margin-top: 3px;
+.navbar{
+  background-color: #091b12e4;
+  padding: 5%;
 }
 
-#navMenu {
-  background-color: #eee;
+.navbar-brand {
+
+  margin-bottom: 3px;
+  margin-top: 3px;
+  color: white;
 }
-.links {
-  color: rgb(146, 145, 145);
-}
-a:hover {
-  /* background-color: #eee; */
-  text-decoration: underline;
-  text-decoration-color: white;
-}
-img {
-  width: 70px;
-  height: 50px;
-  padding-left: 20px;
-  border-radius: 0;
-}
-.logo {
-  display: flex;
-}
+
 </style>
 
   

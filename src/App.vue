@@ -19,39 +19,36 @@ that are understood by the rover.</p>
   <p>If it touches this barrier the rover will crash and the operation will be a failure.</p>
 <h1>Good luck!</h1>
   
-
   
   <GameMision />
 
-  <!-- Como ponia las imagenes? -->
-  <h1>This is your map</h1>
-  <font-awesome-icon icon="fa-light fa-map-location-dot" />
-  
+  <FooterComponent />
  
 
-  <router-view />
+
 </div>
 </template>
 
 <script setup>
 import NavbarComponent from "./components/NavbarComponent.vue"
 import GameMision from "./components/GameMision.vue"
-
-
-
+import FooterComponent from "./components/FooterComponent.vue";
 
 
 </script>
 
 <style>
-/* No puedo sacar de aqui y poner en el style.css. Porque? */
+
+
 .main{
-  /* background-color:rgb(16, 16, 64); */
-  color: #215c3fe4;
+  background-color: #bec8c3e4;
+  color: rgb(53, 53, 53);
   font-weight: bold;
   font-size: 1rem;
   font-family: monospace;
   padding: 10px;
+  border: rgb(75, 75, 75);
+  border-style: dotted;
   
 }
 .main h1{
