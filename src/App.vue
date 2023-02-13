@@ -10,8 +10,8 @@ that are understood by the rover.</p>
 
 <ul>
   <li>To moove the rover to the front: F</li>
-  <li>To to turn the rover to the right: R</li>
-  <li>To turn the rover to the left: L</li>
+  <li>To rotate the rover to the right: R</li>
+  <li>To rotate rover to the left: L</li>
 </ul>
 
 <p>Keep in mind that the maximum coordinates in which the rover can move is (0,0) up to (200,200). 
